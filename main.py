@@ -16,8 +16,8 @@ def main():
     perceptron = Perceptron(tol=1e-9)
 
     #Draw learning curves
-    test.plot_learning_curve(perceptron, np.concatenate((x_train_std, x_test_std)), np.concatenate((y_train, y_test)),30)
-    test.plot_learning_curve(decision_tree, np.concatenate((x_train_std, x_test_std)), np.concatenate((y_train, y_test)),30)
+    test.plot_learning_curve(perceptron, np.concatenate((x_train_std, x_test_std)), np.concatenate((y_train, y_test)), iterations =30)
+    test.plot_learning_curve(decision_tree, np.concatenate((x_train_std, x_test_std)), np.concatenate((y_train, y_test)),iterations =30)
 
     ''' It's possible to visualize data sprites using util.draw_image(x_train[<index>])
         It's also possible to visualize the decision tree using util.draw_tree(decision_tree)'''
