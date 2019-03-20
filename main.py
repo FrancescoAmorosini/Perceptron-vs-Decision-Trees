@@ -1,19 +1,29 @@
-from FashionMNIST.utils.mnist_reader import load_mnist
-import test_perceptron
-import draw_data
-
-
+from sklearn.linear_model import Perceptron
+from sklearn import tree
+import util
+import test
+import numpy as np
 
 def main():
-    x_train, y_train = load_mnist('FashionMNIST/data/fashion', kind='train')
-    x_test, y_test = load_mnist('FashionMNIST/data/fashion', kind='t10k')
-    #draw_data.draw_sprite(x_train[0])
+    #Import dataset
+    x_train, y_train, x_test, y_test = util.load_data()
+    
+    #Sample standardization
+    x_train_std, x_test_std = util.scale_data(x_train, x_test)
 
-    #test_perceptron.sklearning_curve(x_train, y_train, x_test, y_test, 10)
-    test_perceptron.learning_curve(x_train, y_train, x_test, y_test,5)
+    #Create Perceptron and Decision Tree
+    decision_tree = tree.DecisionTreeClassifier(min_impurity_decrease= 1e-5)
+    perceptron = Perceptron(tol=1e-9)
 
-    test_perceptron.plot_results()
+    #Draw learning curves
+    test.plot_learning_curve(perceptron, np.concatenate((x_train_std, x_test_std)), np.concatenate((y_train, y_test)),30)
+    test.plot_learning_curve(decision_tree, np.concatenate((x_train_std, x_test_std)), np.concatenate((y_train, y_test)),30)
+
+    ''' It's possible to visualize data sprites using util.draw_image(x_train[<index>])
+        It's also possible to visualize the decision tree using util.draw_tree(decision_tree)'''
+
 if __name__ == '__main__':
 	main()
+
 
     
