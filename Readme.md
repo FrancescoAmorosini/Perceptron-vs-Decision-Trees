@@ -1,4 +1,4 @@
-# Perceptron vs Decision Trees
+# Perceptron vs Decision Tree
 
 Questo progetto ha l'obiettivo di confrontare le curve di apprendimento di due semplici classificatori molto utilizzati nel campo dell'apprendimento supervisionato: Perceptron (single-layer) e Decision Tree.
 
