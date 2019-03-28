@@ -60,5 +60,6 @@ def plot_results():
     plt.xlabel('Training Set Size')
     plt.legend(loc='best')
     plt.title("Learning Curves")
+    plt.yticks(np.arange(.4, 1.1, .1))
     plt.grid(axis='y',linewidth=0.3)
     plt.show()
