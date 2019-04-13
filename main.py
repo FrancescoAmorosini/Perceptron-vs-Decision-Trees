@@ -12,7 +12,7 @@ def main():
     x_train_std, x_test_std = util.scale_data(x_train, x_test)
 
     #Create Models using Sklearn
-    decision_tree = tree.DecisionTreeClassifier(min_impurity_decrease= 1e-4)
+    decision_tree = tree.DecisionTreeClassifier(min_impurity_decrease= 1e-3)
     perceptron = Perceptron(tol=1e-4)
     iters = 30
 

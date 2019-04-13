@@ -10,7 +10,7 @@ def load_data():
         t = tempfile.mkdtemp()
         # Clone dataset into temporary dir
         git.Repo.clone_from('https://github.com/zalandoresearch/fashion-mnist.git', t, branch='master', depth=1)
-        # Copy desired file from temporary dir into data dir
+        # Copy desired files from temporary dir into data dir
         os.mkdir('./data')
         if not os.path.isdir('./data/fashion'):
             shutil.move(os.path.join(t, 'data/fashion'), './data')

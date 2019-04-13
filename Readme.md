@@ -13,7 +13,7 @@ Per la corretta esecuzione del codice è necessario che l'utente scarichi le lib
 - [NumPy](http://www.numpy.org): funzioni di utility generiche.
 - [Matplotlib](https://matplotlib.org): tracciamento delle curve di apprendimento.
 - [Sci-Kit Learn](https://scikit-learn.org/stable/index.html#): libreria contenente i modelli studiati.
-- [GitPython](https://gitpython.readthedocs.io/en/stable/): modulo necessario per scaricare temporaneamente il dataset durante la prima esecuzione.
+- [GitPython](https://gitpython.readthedocs.io/en/stable/): modulo necessario per scaricare il dataset e lo script per estrarre i dati durante la prima esecuzione.
 - [os](https://docs.python.org/3/library/os.html#module-os), [shutil](https://docs.python.org/3/library/shutil.html#module-shutil), [tempfile](https://docs.python.org/3/library/tempfile.html#module-tempfile), [collections](https://docs.python.org/3/library/collections.html#module-collections): moduli miscellanei **già inclusi** in Python 3.7, utilizzati per creare la cartella `./data` a partire dal dataset scaricato precedentemente.
 - [PyDotPlus](https://pydotplus.readthedocs.io): modulo facoltativo utilizzato esclusivamente per la visualizzazione degli alberi di decisione.
 
@@ -44,9 +44,13 @@ Inoltre è possibile disegnare a piacimento sia l'albero di decisione ottenuto, 
 ```python
 import util
 
-util.draw_image(x_train[<index>])
-util.draw_image(x_test[<index>])
+#Mostra all'utente l'i-esima immagine del training set o del test set
+i = <index>
+util.draw_image(x_train[i])
+util.draw_image(x_test[i])
+#Crea un immagine (.png) che mostra un albero di decisione precedentemente istanziato
 util.draw_tree(decision_tree)
 ```
-Per maggiori dettagli sulla conduzione degli esperimenti è consigliato leggere il documento `relazione.pdf`.
+
+Si consiglia di consultare il file `relazione.pdf` per ulteriori dettagli circa l'implementazione dei modelli, la conduzione degli esperimenti e l'analisi dei risultati.
 
